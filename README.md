@@ -2,4 +2,5 @@
 
 Practice HTML syntax by converting a mockup of a blog article into a real website!
 
-- mockup of blog article is inside project as an image(blog-mockup).
+####Project Submission
+- Take a moment to double check that your index.html file renders exactly like the mockup!

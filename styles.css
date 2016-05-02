@@ -1,0 +1,33 @@
+body{
+  font-family: helvetica,serif;
+  text-align:left;
+}
+.main{
+  width:300px;
+  padding:10px;
+  border:1px solid #A3A3A3;
+  box-shadow: 0 2px 4px 2px #A3A3A3;
+  border-radius:5px;
+  background-color:#f5f5dc;
+}
+.information{
+  border:1px solid #A3A3A3;
+  padding:10px;
+}
+.information p:first-child{
+  font-style:italic;
+}
+img{
+  margin-bottom: 5px;
+}
+ul{
+  list-style: none;
+  padding:0;
+}
+li{
+  font-style: italic;
+}
+li span{
+  font-weight: bold;
+  font-style:normal;
+}

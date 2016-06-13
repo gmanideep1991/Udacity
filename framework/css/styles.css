@@ -1,0 +1,23 @@
+body {
+    font-family: 'Lato', sans-serif;
+    color: #2d3c49;
+    font-weight: 300;
+}
+.margin-header {
+    margin-top: 40px;
+}
+.text-featured-work {
+    color: #7d97ad;
+}
+h1 {
+    font-size: 60px;
+}
+.designation {
+    margin-top: 0;
+}
+.logo {
+    border-radius: 100%;
+}
+hr {
+    border-top: 3px solid #bbb;
+}

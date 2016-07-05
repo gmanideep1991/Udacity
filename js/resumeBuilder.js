@@ -137,6 +137,7 @@ bio.display();
 work.display();
 education.display();
 projects.display();
+
 initializeMap();
 
 function replaceHTML(HTMLvariable, data, stringToReplace = "%data%") {

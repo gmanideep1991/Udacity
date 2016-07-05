@@ -7,9 +7,9 @@ var bio = {
         "github": "gmanideep1991",
         "location": "overland park, kansas"
     },
-    welcomeMessage: "Hello, Everyone welcome to my page",
-    skills: ["javascript", "HTML", "CSS", "java", "C#"],
-    biopic: "images/fry.jpg",
+    "welcomeMessage": "Hello, Everyone welcome to my page",
+    "skills": ["javascript", "HTML", "CSS", "java", "C#"],
+    "biopic": "images/fry.jpg",
     display: function() {
         var $contacts = bio.contacts;
         var headerName = replaceHTML(HTMLheaderName, bio.name);
@@ -63,9 +63,9 @@ var education = {
             var schoolDegree = replaceHTML(HTMLschoolDegree, val.degree);
             var schoolDates = replaceHTML(HTMLschoolDates, val.dates);
             var majors = "";
-            for (var major in val.majors) {
-                majors += val.majors[major];
-            }
+            val.majors.forEach(function(major){
+              majors += major;
+            });
             var schoolMajors = replaceHTML(HTMLschoolMajor, majors);
             $(".education-entry:last").append([schoolName + schoolDegree, schoolDates, schoolMajors, schoolLocation]);
         });
@@ -117,7 +117,7 @@ var projects = {
         "title": "project A",
         "dates": "2014",
         "description": "mock project",
-        "images": "images/197x148.gif"
+        "images": ["images/197x148.gif"]
     }],
     display: function() {
         projects.projects.forEach(function(val) {
@@ -126,8 +126,11 @@ var projects = {
             projTitle.replace("#", val.url);
             var projDates = replaceHTML(HTMLprojectDates, val.dates);
             var projDescription = replaceHTML(HTMLprojectDescription, val.description);
-            var projImages = replaceHTML(HTMLprojectImage, val.images);
-            $(".project-entry:last").append([projTitle, projDates, projDescription, projImages]);
+            $(".project-entry:last").append([projTitle, projDates, projDescription]);
+            val.images.forEach(function(val){
+              var projImages = replaceHTML(HTMLprojectImage,val);
+              $(".project-entry:last").append(projImages);
+            });
         });
     }
 };

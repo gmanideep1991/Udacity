@@ -15,6 +15,13 @@ User can move the player using arrow keys.
 * RIGHT : Moves Player one step right.
 * LEFT : Moves player one step left.
 
+How to run application
+----------------------
+* Download the zip file from the following github repo([https://github.com/gmanideep1991/frontend-nanodegree-arcade-game.git](https://github.com/gmanideep1991/frontend-nanodegree-arcade-game.git)).
+* open the index.html file in browser.
+
+you can also play game by clicking the following link. ([https://gmanideep1991.github.io/frontend-nanodegree-arcade-game/](https://gmanideep1991.github.io/frontend-nanodegree-arcade-game/))
+
 References
 ----------
 * [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)

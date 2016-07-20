@@ -20,22 +20,12 @@ var Enemy = function(x, y) {
 
 Enemy.prototype.update = function(dt) {
     if (this.x < 500) {
-        this.x += getSpeed() * dt;
+        this.x += Math.floor(Math.random() * (600-0+1) + 0) * dt;
     } else {
         this.x += -100;
-        this.x = getSpeed() * dt;
+        this.x = Math.floor(Math.random() * (600-0+1) + 0) * dt;
     }
 };
-
-
-/**
- * [getSpeed calculates the speed of enemy]
- * @return {[number]} [random number between 0 and 600]
- */
-function getSpeed() {
-    return Math.floor(Math.random() * (MAX_SPEED-MIN_SPEED+1) + MIN_SPEED);
-
-}
 
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);

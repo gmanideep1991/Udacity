@@ -17,7 +17,7 @@ User can move the player using arrow keys.
 
 How to run application
 ----------------------
-* Download the zip file from the following github repo([https://github.com/gmanideep1991/frontend-nanodegree-arcade-game.git](https://github.com/gmanideep1991/frontend-nanodegree-arcade-game.git)).
+* Download the zip file from the following github repo([https://github.com/gmanideep1991/frontend-nanodegree-arcade-game/archive/gh-pages.zip](https://github.com/gmanideep1991/frontend-nanodegree-arcade-game/archive/gh-pages.zip)).
 * open the index.html file in browser.
 
 you can also play game by clicking the following link. ([https://gmanideep1991.github.io/frontend-nanodegree-arcade-game/](https://gmanideep1991.github.io/frontend-nanodegree-arcade-game/))

@@ -501,10 +501,10 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-
+    var pos = document.body.scrollTop / 1250;
     var phases=[];
     for (var i = 0; i < 5; i++){
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    var phase = Math.sin(pos + (i % 5));
  	  phases.push(phase);
    }
 

@@ -446,6 +446,8 @@ var resizePizzas = function(size) {
 
     return dx;
   }
+  
+  //Extracted the code out of loop in changePizzaSizes since all are resized to same size. Reduces time in resize.
   var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[0], size);
   var newwidth = (document.querySelectorAll(".randomPizzaContainer")[0].offsetWidth + dx) + 'px';
 
@@ -500,7 +502,7 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-
+//Extracted code out of loop since same code is iterated more than required times. Helps in reducing to 60fps
   var pos = document.body.scrollTop /1250;
   var phases = [];
   for(var x = 0 ;x<5;x++){

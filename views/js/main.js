@@ -375,7 +375,7 @@ var pizzaElementGenerator = function(i) {
   pizzaContainer.classList.add("randomPizzaContainer");
   pizzaContainer.style.width = "33.33%";
   pizzaContainer.id = "pizza" + i;                // gives each pizza element a unique id
-  pizzaImageContainer.style.width="35%";
+  pizzaImageContainer.classList.add("col-md-6");
 
   pizzaImage.src = "images/pizza.png";
   pizzaImage.style.width="250px";
@@ -385,7 +385,7 @@ var pizzaElementGenerator = function(i) {
   pizzaContainer.appendChild(pizzaImageContainer);
 
 
-  pizzaDescriptionContainer.style.width="65%";
+  pizzaDescriptionContainer.classList.add("col-md-6");
 
   pizzaName = document.createElement("h4");
   pizzaName.innerHTML = randomName();

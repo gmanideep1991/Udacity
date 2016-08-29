@@ -378,8 +378,8 @@ var pizzaElementGenerator = function(i) {
   pizzaImageContainer.classList.add("col-md-6");
 
   pizzaImage.src = "images/pizza.png";
-  pizzaImage.style.width="250px";
-  pizzaImage.style.height="300px";
+  pizzaImage.width="250";
+  pizzaImage.height="300";
   pizzaImage.classList.add("img-responsive");
   pizzaImageContainer.appendChild(pizzaImage);
   pizzaContainer.appendChild(pizzaImageContainer);

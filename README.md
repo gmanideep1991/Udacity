@@ -5,7 +5,7 @@
 ### Getting started
  I have not created the gulp. I used the github pages for calculating performance. Here is the link for the [website]( https://gmanideep1991.github.io/frontend-nanodegree-mobile-portfolio/)
 
-####Part 1: Optimize PageSpeed Insights score for index.html
+#### Part 1: Optimize PageSpeed Insights score for index.html
 
 Following things needs to be done in order to increase score for index.html.
 * We need to optimize the images. (major increase in score)
@@ -14,7 +14,7 @@ Following things needs to be done in order to increase score for index.html.
 * added media parameter to print.css link.
  
 
-####Part 2: Optimize Frames per Second in pizza.html
+#### Part 2: Optimize Frames per Second in pizza.html
 
 Following things needs to be done for 60 fps and reduce the time to 5ms.
 * We need to bring the code out of changePizzaSizes() since all of them are having same size. reduced time for resize.

@@ -480,7 +480,7 @@ for (var i = 2; i < 100; i++) {
 window.performance.mark("mark_end_generating");
 window.performance.measure("measure_pizza_generation", "mark_start_generating", "mark_end_generating");
 var timeToGenerate = window.performance.getEntriesByName("measure_pizza_generation");
-console.log("Time to generate pizzas on load: " + timeToGenerate[0].duration + "ms");
+console.log("Time to generate pizzas on load: " + timeToResize[timeToResize.length-1].duration + "ms");
 
 // Iterator for number of times the pizzas in the background have scrolled.
 // Used by updatePositions() to decide when to log the average time per frame

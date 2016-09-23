@@ -5,10 +5,10 @@ This project uses google maps api to generate a predefined location on the map w
 
 How to run application
 ----------------------
-* Download the zip file from the following github repo([https://github.com/gmanideep1991/frontend-nanodegree-arcade-game/archive/gh-pages.zip](https://github.com/gmanideep1991/frontend-nanodegree-arcade-game/archive/gh-pages.zip)).
+* Download the zip file from the following github repo([https://github.com/gmanideep1991/neighbour-hood-map/archive/gh-pages.zip](https://github.com/gmanideep1991/neighbour-hood-map/archive/gh-pages.zip)).
 * open the index.html file in browser.
 
-you can also view application by clicking the following link. ([https://gmanideep1991.github.io/frontend-nanodegree-arcade-game/](https://gmanideep1991.github.io/frontend-nanodegree-arcade-game/))
+you can also view application by clicking the following link. ([https://gmanideep1991.github.io/neighbour-hood-map/](https://gmanideep1991.github.io/neighbour-hood-map/))
 
 References
 ----------

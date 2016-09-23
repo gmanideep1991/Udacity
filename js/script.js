@@ -20,7 +20,7 @@ var locations = [{
     long: -94.562904
 }];
 var map;
-
+var prev_info_window = false;
 function AppViewModel() {
     var self = this;
     this.locationList = ko.observableArray([]);
@@ -45,14 +45,16 @@ function AppViewModel() {
         }
     }, self);
 }
-
+/**
+ * [Build the markers for the location]
+ * @param  data [location data]
+ */
 function buildLocation(data) {
     var self = this;
     this.visible = ko.observable(true);
     this.query = data.query;
     this.marker = buildMarker(data);
     this.infoWindow = new google.maps.InfoWindow({
-        content: self.contentString
     });
     this.marker.addListener('click', function() {
         loadContent(data, self);
@@ -65,14 +67,22 @@ function buildLocation(data) {
       this.marker.setMap(this.visible()=== true ? map : null);
     }, this);
 }
-
+/**
+ * [Creates the marker for the venue]
+ * @param  data [json data of the venue]
+ * @return [Google marker]
+ */
 function buildMarker(data) {
     return new google.maps.Marker({
         position: new google.maps.LatLng(data.lat, data.long),
         map: map
     });
 }
-
+/**
+ * [Create the info window for the marker]
+ * @param  data [data of the venue]
+ * @param  self [google maps marker]
+ */
 function loadContent(data, self) {
 
     var clientId = "UEUQTTY4QUOVGYGCCFZN5BSPK0RINHAJOXMKXKI3ULALTT1W";
@@ -87,15 +97,29 @@ function loadContent(data, self) {
             data.long,
         limit: 1
     }).done(function(data) {
-      var venue = data.response.venues[0];
-       var contentString ="<div class='info-window'>"+ getTitle(venue.name) + getUrl(venue.url) + getFormattedAddress(venue.location.formattedAddress)+ getPhoneNumber(venue.contact.formattedPhone)+"</div>";
+       var venue = data.response.venues[0];
+       var contentString ="<div class='info-window'>"+
+                          getTitle(venue.name) +
+                          getUrl(venue.url) +
+                          getFormattedAddress(venue.location.formattedAddress) +
+                          getPhoneNumber(venue.contact.formattedPhone)+
+                          "<div class='third-party'><i>powered by foursquare</i></div>"+
+                          "</div>";
+       if(prev_info_window){
+         prev_info_window.close();
+       }
+       prev_info_window = self.infoWindow;
         self.infoWindow.setContent(contentString);
         self.infoWindow.open(map,self.marker);
     }).fail(function(data){
       alert("Error in loading details from foursquare.");
     });
 }
-
+/**
+ * [Create an HTML element with address]
+ * @param  {[string]} formattedAddress [formatted address of the venue]
+ * @return {[string]}                  [HTML element with formatted address]
+ */
 function getFormattedAddress(formattedAddress){
   var address = "";
   for(i=0;i<formattedAddress.length;i++){
@@ -103,16 +127,33 @@ function getFormattedAddress(formattedAddress){
   }
   return "<div class=address>"+address+"<//div>";
 }
-
+/**
+ * [Create an HTML element with title]
+ * @param  {[string]} name [Full name of the venue]
+ * @return {[string]}      [HTML element with name]
+ */
 function getTitle(name){
   return "<div class=title>"+ name + "</div>";
 }
+/**
+ * [Create an HTML element with URL]
+ * @param  {[string]} url [url for the venue]
+ * @return {[string]}     [html element with URL]
+ */
 function getUrl(url){
   return url !==undefined ? '<div class="content"><a href="' + url +'">' + url + "</a></div>":"";
 }
+/**
+ * [Create an HTML element with phone number]
+ * @param  {[string]} phoneNumber [phone number of the venue]
+ * @return {[string]}             [html element with phone number]
+ */
 function getPhoneNumber(phoneNumber){
   return '<div class="phone-number">' + phoneNumber + "</div>";
 }
+/**
+ * [initial function to start the application]
+ */
 function initialize() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,

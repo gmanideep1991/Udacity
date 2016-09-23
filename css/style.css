@@ -21,3 +21,15 @@ html, body {
 #map {
     height: 100%;
 }
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .search-results {
+        height: initial;
+    }
+}
+
+@media (max-width: 767px) {
+    .search-results {
+        height: initial;
+    }
+}

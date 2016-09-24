@@ -44,6 +44,7 @@ function AppViewModel() {
             });
         }
     }, self);
+
 }
 /**
  * [Build the markers for the location]
@@ -55,6 +56,7 @@ function buildLocation(data) {
     this.query = data.query;
     this.marker = buildMarker(data);
     this.infoWindow = new google.maps.InfoWindow({
+      content:loadContent(data, self)
     });
     this.marker.addListener('click', function() {
         loadContent(data, self);
@@ -66,6 +68,9 @@ function buildLocation(data) {
     this.showMarker = ko.computed(function() {
       this.marker.setMap(this.visible()=== true ? map : null);
     }, this);
+    this.xyz = function(place) {
+		google.maps.event.trigger(self.marker, 'click');
+	};
 }
 /**
  * [Creates the marker for the venue]
@@ -150,6 +155,9 @@ function getUrl(url){
  */
 function getPhoneNumber(phoneNumber){
   return '<div class="phone-number">' + phoneNumber + "</div>";
+}
+function handleError() {
+	alert("Error loading google maps");
 }
 /**
  * [initial function to start the application]

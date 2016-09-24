@@ -26,7 +26,7 @@
                                 </div>
                             </div>
                             <ul class="results" id="results" data-bind="foreach: filteredList">
-                                <li class="place" id="place" data-bind="text: query"></li>
+                                <li class="place" id="place" data-bind="text: query ,click:xyz"></li>
                             </ul>
                         </div>
                         <div class="col-sm-9" id="map">
@@ -43,7 +43,7 @@
     <script src="js/libs/bootstrap.min.js"></script>
     <script type='text/javascript' src="js/libs/knockout-3.4.0.js"></script>
     <script src="js/script.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHODAb3u6uy47h8t3DnIGhJ-W5-aFnq78&callback=initialize" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHODAb3u6uy47h8t3DnIGhJ-W5-aFnq78&callback=initialize" async defer onerror="handleError()"></script>
 </body>
 
 </html>

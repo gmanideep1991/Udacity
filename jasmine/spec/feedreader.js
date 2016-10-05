@@ -77,9 +77,9 @@ $(function() {
 
         beforeEach(function(done) {
           loadFeed(0, function() {
-            load1 = $('.feed').innerHTML();
+            load1 = $('.feed').html();
             loadFeed(1, function() {
-              load2 = $('.feed').innerHTML();
+              load2 = $('.feed').html();
               done();
             });
           });

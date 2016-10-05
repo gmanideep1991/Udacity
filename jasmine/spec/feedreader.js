@@ -72,18 +72,22 @@ $(function() {
     //Test suite for New Feed Selection
     describe("New Feed Selection", function() {
 
-        var initialFeed;
-        //setup
+        var load1,
+            load2;
+
         beforeEach(function(done) {
-            initialFeed = $('.feed').html();
+          loadFeed(0, function() {
+            load1 = $('.feed').innerHTML();
             loadFeed(1, function() {
-                done();
+              load2 = $('.feed').innerHTML();
+              done();
             });
+          });
         });
+        
         //Test to check when loadfeed is called new entry is added.
         it("changes its content", function(done) {
-            var newFeed = $(".feed").innerHTML;
-            expect(initialFeed).not.toBe(newFeed);
+            expect(load1).not.toBe(load2);
             done();
         });
 

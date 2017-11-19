@@ -1,0 +1,39 @@
+html, body {
+    height: 100%;
+}
+
+.search-bar {
+    height: 50px;
+}
+
+.main {
+    height: calc(100% - 50px);
+}
+
+.main-row, .content, .content-wrapper, .main-content {
+    height: 100%;
+}
+
+#place {
+    cursor: pointer;
+}
+
+.search-results {
+    height: 100%
+}
+
+#map {
+    height: 100%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .search-results {
+        height: initial;
+    }
+}
+
+@media (max-width: 767px) {
+    .search-results {
+        height: initial;
+    }
+}

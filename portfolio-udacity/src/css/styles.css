@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?9ccfdq');
+    src: url('../fonts/icomoon.eot?9ccfdq#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?9ccfdq') format('truetype'), url('../fonts/icomoon.woff?9ccfdq') format('woff'), url('../fonts/icomoon.svg?9ccfdq#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    color: #2d3c49;
+    font-weight: 300;
+}
+a {
+    cursor: pointer;
+}
+.modal-footer {
+    text-align: center;
+}
+.portfolio-header {
+    margin-top: 40px;
+}
+.text-featured-work {
+    color: #7d97ad;
+    margin: 20px 0;
+}
+.logo img {
+    border-radius: 100%;
+}
+hr {
+    border-top: 3px solid #bbb;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.icon-mail:before {
+    content: "\ea83";
+}
+.icon-linkedin:before {
+    content: "\eac9";
+}
+footer a {
+    padding: 10px;
+    font-size: 30px;
+}
+footer a:hover {
+    text-decoration: none;
+}
+footer a:active {
+    text-decoration: none;
+}
+@media (min-width: 992px) {
+    .logo {
+        text-align: left;
+    }
+    .name-designation {
+        text-align: right;
+    }
+    h1 {
+        font-size: 44px;
+    }
+}
